@@ -1,9 +1,9 @@
 /*
- * @Description: 
+ * @Description:
  * @Author: qk
  * @Date: 2020-03-10 14:00:46
  * @LastEditors: wanjunSun
- * @LastEditTime: 2020-03-11 09:07:05
+ * @LastEditTime: 2020-03-13 09:38:30
  */
 
 let telphoneZZ = /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/ //座机正则例如0551-5555555
@@ -12,33 +12,33 @@ let nameZZ = /^([\u4e00-\u9fa5]{1,20}|[a-zA-Z\.\s]{1,20})$/
 let regular = /[0-9]+([.]{1}[0-9]+){0,1}/ //输入整数或小数
 
 // 非空验证
-export const isNull = (parameter: any):boolean => {
+export const isNull = (parameter: any): boolean => {
   if (parameter == null || parameter == undefined || parameter == "")
     return true
   else return false
 }
 
 //手机验证
-export const isMoblePhone = (parameter: any):boolean => {
+export const isMoblePhone = (parameter: any): boolean => {
   let mobilephoneZZ = /^0?(13[0-9]|15[012356789]|17[013678]|18[0-9]|14[57])[0-9]{8}$/ //手机号码正则
   if (!mobilephoneZZ.test(parameter)) return true
   else return false
 }
 
 //电话验证
-export const isTelphone = (parameter: any):boolean => {
+export const isTelphone = (parameter: any): boolean => {
   if (!telphoneZZ.test(parameter)) return true
   else return false
 }
 
 //邮箱验证
-export const isMail = (parameter: any):boolean => {
+export const isMail = (parameter: any): boolean => {
   if (!mailZZ.test(parameter)) return true
   else return false
 }
 
 //名字验证
-export const isName = (parameter: any):boolean => {
+export const isName = (parameter: any): boolean => {
   if (!nameZZ.test(parameter)) return true
   else return false
 }
@@ -50,9 +50,9 @@ export const isNumber = (parameter: any): boolean => {
 }
 
 //验证开始时间和结束时间比较
-export const timeComparison = (d1: any, d2: any):boolean => {
-  var oDate1 = new Date(d1);
-  var oDate2 = new Date(d2);
+export const timeComparison = (d1: any, d2: any): boolean => {
+  var oDate1 = new Date(d1)
+  var oDate2 = new Date(d2)
   if (oDate1.getTime() > oDate2.getTime()) return true
   else return false
 }
@@ -161,4 +161,7 @@ export const uuid = (len: number, radix: number = 10) => {
   }
   return uuid.join("")
 }
-
+//去除空格
+export const removeSpace = (value: string): string => {
+  return value.replace(/\s/g, "")
+}
