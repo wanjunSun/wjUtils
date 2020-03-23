@@ -23,4 +23,5 @@
 |  getSubStringSum  | 指定字符串溢出显示省略号 |  （string,nubner）  |        getSubStringSum(“123154”,5)        |           1231...           |
 |       uuid        |         生成uuid         | (number,number) |             uuid(长度,进制数)             |           string           |
 | removeSpace | 移除空格 | string | removeSpace(" test ") | test/string |
+| isContain | 是否包含 | （any,array） | isContain(a,["a","b"]) | boolean |
 

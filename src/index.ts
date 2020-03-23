@@ -3,7 +3,7 @@
  * @Author: qk
  * @Date: 2020-03-10 14:00:46
  * @LastEditors: wanjunSun
- * @LastEditTime: 2020-03-13 09:38:30
+ * @LastEditTime: 2020-03-23 16:05:20
  */
 
 let telphoneZZ = /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/ //座机正则例如0551-5555555
@@ -161,7 +161,27 @@ export const uuid = (len: number, radix: number = 10) => {
   }
   return uuid.join("")
 }
-//去除空格
+/**
+ * @author: wanjunSun
+ * @description: 去除空格
+ * @param {type} 需要去除的值
+ * @return:
+ * @Date: 2020-03-23 16:04:57
+ */
 export const removeSpace = (value: string): string => {
   return value.replace(/\s/g, "")
+}
+
+/**
+ * @author: wanjunSun
+ * @description: 在数组中是否包含某个字段
+ * @param {type} value:值 list:数组
+ * @return:
+ * @Date: 2020-03-23 16:03:57
+ */
+export const isContain = (value: any, list: []) => {
+  for (let i = 0; i < list.length; i++) {
+    if (value === list[i]) return true
+  }
+  return false
 }
