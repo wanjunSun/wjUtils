@@ -22,3 +22,19 @@ export declare const getSubStringSum: (str?: string, num?: number) => string;
  * @param {number} radix uuid进制数
  */
 export declare const uuid: (len: number, radix?: number) => string;
+/**
+ * @author: wanjunSun
+ * @description: 去除空格
+ * @param {type} 需要去除的值
+ * @return:
+ * @Date: 2020-03-23 16:04:57
+ */
+export declare const removeSpace: (value: string) => string;
+/**
+ * @author: wanjunSun
+ * @description: 在数组中是否包含某个字段
+ * @param {type} value:值 list:数组
+ * @return:
+ * @Date: 2020-03-23 16:03:57
+ */
+export declare const isContain: (value: any, list: []) => boolean;

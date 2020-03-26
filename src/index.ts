@@ -3,7 +3,7 @@
  * @Author: qk
  * @Date: 2020-03-10 14:00:46
  * @LastEditors: wanjunSun
- * @LastEditTime: 2020-03-23 16:05:20
+ * @LastEditTime: 2020-03-26 15:47:36
  */
 
 let telphoneZZ = /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/ //座机正则例如0551-5555555
@@ -184,4 +184,20 @@ export const isContain = (value: any, list: []) => {
     if (value === list[i]) return true
   }
   return false
+}
+
+/**
+ * @author: wanjunSun
+ * @description: 解决H5响应式问题 主要关于键盘改变body高度问题
+ * @param {type} body,height:改变高度,是否需要滚动
+ * @return:
+ * @Date: 2020-03-26 15:02:08
+ */
+export const highlyResponsive = (
+  body: any,
+  height: any = "100vh",
+  scroll: boolean = true
+) => {
+  body.style.height = height
+  if (scroll) window.scrollBy(0, 0)
 }

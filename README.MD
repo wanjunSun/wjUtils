@@ -7,7 +7,7 @@
 #### 工具包含的方法
 
 |     方法名称      |           作用           |    参数类型     |                   举例                    |            返回            |
-| :---------------: | :----------------------: | :-------------: | :---------------------------------------: | :------------------------: |
+| :---------------: | :----------------------: | :-------------: | :---------------------------------------- | :------------------------: |
 |      isNull       |        是否为空值        |       any       |               isNull(value)               |          boolean           |
 |   isMoblePhone    |         手机验证         |       any       |            isMoblePhone(value)            |          boolean           |
 |    isTelphone     |         电话验证         |       any       |             isTelphone(value)             |          boolean           |
@@ -24,4 +24,28 @@
 |       uuid        |         生成uuid         | (number,number) |             uuid(长度,进制数)             |           string           |
 | removeSpace | 移除空格 | string | removeSpace(" test ") | test/string |
 | isContain | 是否包含 | （any,array） | isContain(a,["a","b"]) | boolean |
+| highlyResponsive | 给h5使用主要解决键盘上移影响到样式 | (any,any,boolean) | 下面所示 |  |
+
+#### highlyResponsive 使用方式
+
+*HTML* 
+
+```html
+<input onfocus = "onFocus()"></input>
+```
+
+*JS*
+
+```
+function onFocus(){
+  let body = document.getElementById("test")
+  highlyResponsive(body,"100vh",false);
+}
+```
+
+`第一个参数传入页面元素`
+
+`第二个参数传入调整的高度`
+
+`第三个参数 默认true 作用是否滚到顶端 如果不需要设置为false `
 
