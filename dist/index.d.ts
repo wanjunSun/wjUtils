@@ -38,3 +38,11 @@ export declare const removeSpace: (value: string) => string;
  * @Date: 2020-03-23 16:03:57
  */
 export declare const isContain: (value: any, list: []) => boolean;
+/**
+ * @author: wanjunSun
+ * @description: 解决H5响应式问题 主要关于键盘改变body高度问题
+ * @param {type} body,height:改变高度,是否需要滚动
+ * @return:
+ * @Date: 2020-03-26 15:02:08
+ */
+export declare const highlyResponsive: (body: any, height?: any, scroll?: boolean) => void;
