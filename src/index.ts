@@ -3,7 +3,7 @@
  * @Author: qk
  * @Date: 2020-03-10 14:00:46
  * @LastEditors: wanjunSun
- * @LastEditTime: 2020-04-18 15:42:16
+ * @LastEditTime: 2020-04-18 16:28:19
  */
 
 let telphoneZZ = /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/ //座机正则例如0551-5555555
@@ -201,6 +201,37 @@ export const highlyResponsive = (
   body.style.height = height
   if (scroll) window.scrollBy(0, 0)
 }
-
-export const hideContent=(type:string="idCard",content:string)=>{
+/**
+ * @author: wanjunSun
+ * @description: 脱敏处理
+ * @param {type} 脱敏类型:身份证idCard 、姓名 name 、电话 phone
+ * @param {content} 需要处理的内容
+ * @return:
+ * @Date: 2020-04-18 16:10:35
+ */
+export const desensitization = (
+  type: string = "idCard",
+  content: [string, number]
+): string => {
+  let str = ""
+  if (content) {
+    let rContent = content.toString()
+    if (type === "idCard") {
+      str = rContent.replace(/(\d{4})\d{10}(\d{4})/, "$1*****$2")
+    } else if (type === "phone") {
+      str = rContent.replace(/(\d{3})\d{4}(\d{4})/, "$1****$2")
+    } else if (type === "name") {
+      if (rContent.length <= 3) {
+        str = "*" + rContent.substring(1, rContent.length)
+      } else if (rContent.length > 3 && rContent.length <= 6) {
+        str = "**" + rContent.substring(2, rContent.length)
+      } else if (rContent.length > 6) {
+        str =
+          rContent.substring(0, 2) +
+          "****" +
+          rContent.substring(6, rContent.length)
+      }
+    }
+  }
+  return str
 }
