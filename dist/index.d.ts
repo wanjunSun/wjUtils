@@ -46,3 +46,12 @@ export declare const isContain: (value: any, list: []) => boolean;
  * @Date: 2020-03-26 15:02:08
  */
 export declare const highlyResponsive: (body: any, height?: any, scroll?: boolean) => void;
+/**
+ * @author: wanjunSun
+ * @description: 脱敏处理
+ * @param {type} 脱敏类型:身份证idCard 、姓名 name 、电话 phone
+ * @param {content} 需要处理的内容
+ * @return:
+ * @Date: 2020-04-18 16:10:35
+ */
+export declare const desensitization: (type: string | undefined, content: [string, number]) => string;
