@@ -1,6 +1,6 @@
 {
   "name": "wj_utils",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "wj_utils 个人用的一些基本库",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -10,8 +10,10 @@
   },
   "keywords": [
     "工具类",
-    "时间对比",
-    "格式化",
+    "验证",
+    "uuid",
+    "脱敏",
+    "TypeScript",
     "JavaScript"
   ],
   "author": "wanjunSun",
