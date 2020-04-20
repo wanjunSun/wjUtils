@@ -14,7 +14,8 @@
 |   isMoblePhone    |         手机验证         |       any       |            isMoblePhone(value)            |                     |          boolean           |
 |    isTelphone     |         电话验证         |       any       |             isTelphone(value)             |                     |          boolean           |
 |      isMail       |         邮箱验证         |       any       |               isMail(value)               |                     |          boolean           |
-|      isName       |         中文名字         |       any       |               isName(value)               |                     |          boolean           |
+|      isName       |         中文验证         |       any       |               isName(value)               |                     |          boolean           |
+| isIdCard | 身份证验证 | (string\|number) | isIdCard(value) | | boolean |
 |     isNumber      |     数字或者小数验证     |       any       |              isNumber(value)              |                     |          boolean           |
 |  timeComparison   |         时间对比         |   （any,any）   | timeComparison("2020-02-13","2020-02-12") |  | boolean（true:第一个值大） |
 |       isIe        |         浅识别ie         |                 |                                           |                            |                            |
@@ -28,6 +29,8 @@
 | isContain | 是否包含 | （any,array） | isContain(a,["a","b"]) |  | boolean |
 | highlyResponsive | 给h5使用主要解决键盘上移影响到样式 | (any,any,boolean) | 下面所示（1.1） |  |  |
 | desensitization | 脱敏验证 | (type:any,content:string\|number) | 下面所示（1.2） | type:idCard\|phone\|name | string |
+| debounce | 函数防抖 | (函数,规定时间) |  |  |  |
+| throttle | 节流函数 | (函数,规定时间) |  |  |  |
 
 #### 1.1--highlyResponsive 使用方式
 

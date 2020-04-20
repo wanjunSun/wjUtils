@@ -3,14 +3,14 @@
  * @Author: qk
  * @Date: 2020-03-10 14:00:46
  * @LastEditors: wanjunSun
- * @LastEditTime: 2020-04-20 10:51:54
+ * @LastEditTime: 2020-04-20 11:44:03
  */
 
-let telphoneZZ = /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/ //座机正则例如0551-5555555
-let mailZZ = /^[0-9A-Za-zd]+([-_.][0-9A-Za-zd]+)*@([0-9A-Za-zd]+[-.])+[A-Za-zd]{2,5}$/ //邮箱正则
-let nameZZ = /^([\u4e00-\u9fa5]{1,20}|[a-zA-Z\.\s]{1,20})$/
+let telphoneReg = /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/ //座机正则例如0551-5555555
+let mailReg = /^[0-9A-Za-zd]+([-_.][0-9A-Za-zd]+)*@([0-9A-Za-zd]+[-.])+[A-Za-zd]{2,5}$/ //邮箱正则
+let nameReg = /^([\u4e00-\u9fa5]{1,20}|[a-zA-Z\.\s]{1,20})$/
 let regular = /[0-9]+([.]{1}[0-9]+){0,1}/ //输入整数或小数
-
+let idCardReg = /^(([1][1-5])|([2][1-3])|([3][1-7])|([4][1-6])|([5][0-4])|([6][1-5])|([7][1])|([8][1-2]))\d{4}(([1][9]\d{2})|([2]\d{3}))(([0][1-9])|([1][0-2]))(([0][1-9])|([1-2][0-9])|([3][0-1]))\d{3}[0-9xX]$/ //身份证验证
 // 非空验证
 export const isNull = (parameter: any): boolean => {
   if (parameter == null || parameter == undefined || parameter == "")
@@ -20,26 +20,26 @@ export const isNull = (parameter: any): boolean => {
 
 //手机验证
 export const isMoblePhone = (parameter: any): boolean => {
-  let mobilephoneZZ = /^0?(13[0-9]|15[012356789]|17[013678]|18[0-9]|14[57])[0-9]{8}$/ //手机号码正则
-  if (!mobilephoneZZ.test(parameter)) return true
+  let mobilephoneReg = /^0?(13[0-9]|15[012356789]|17[013678]|18[0-9]|14[57])[0-9]{8}$/ //手机号码正则
+  if (!mobilephoneReg.test(parameter)) return true
   else return false
 }
 
 //电话验证
 export const isTelphone = (parameter: any): boolean => {
-  if (!telphoneZZ.test(parameter)) return true
+  if (!telphoneReg.test(parameter)) return true
   else return false
 }
 
 //邮箱验证
 export const isMail = (parameter: any): boolean => {
-  if (!mailZZ.test(parameter)) return true
+  if (!mailReg.test(parameter)) return true
   else return false
 }
 
-//名字验证
+//中文验证
 export const isName = (parameter: any): boolean => {
-  if (!nameZZ.test(parameter)) return true
+  if (!nameReg.test(parameter)) return true
   else return false
 }
 
@@ -48,7 +48,11 @@ export const isNumber = (parameter: any): boolean => {
   if (!regular.test(parameter)) return true
   else return false
 }
-
+//身份证验证
+export const isIdCard = (paramenter: string | number): boolean => {
+  if (!idCardReg.test(paramenter.toString())) return true
+  else return false
+}
 //验证开始时间和结束时间比较
 export const timeComparison = (d1: any, d2: any): boolean => {
   var oDate1 = new Date(d1)
@@ -234,4 +238,46 @@ export const desensitization = (
     }
   }
   return str
+}
+/**
+ * @author: wanjunSun
+ * @description: 防抖
+ * @param {fun} 函数
+ * @param {dalay} 时间
+ * @return:
+ * @Date: 2020-04-20 11:40:52
+ */
+export const debounce = (fun: Function, dalay: number) => {
+  let timer: any = null
+  return (dalay: any, ...args: any[]) => {
+    if (timer) clearTimeout(timer)
+    timer = setTimeout(() => {
+      fun.apply(this, args)
+      timer = null
+    }, dalay)
+  }
+}
+/**
+ * @author: wanjunSun
+ * @description: 节流
+ * @param {fun} 函数
+ * @param {dalay} 时间
+ * @return:
+ * @Date: 2020-04-20 11:40:52
+ */
+export const throttle = (fun: Function, dalay: number) => {
+  let timer: any = null
+  let prev = Date.now() - dalay
+  return (...args: any[]) => {
+    let remaining = dalay - (Date.now() - prev)
+    clearTimeout(timer)
+    if (remaining <= 0) {
+      fun.apply(this, args)
+      prev = Date.now()
+    } else {
+      timer = setTimeout(() => {
+        fun.apply(this, args)
+      }, remaining)
+    }
+  }
 }
