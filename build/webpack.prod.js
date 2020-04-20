@@ -17,7 +17,7 @@ const prodConfig = {
   },
   plugins: [new CleanWebpackPlugin()],
   output: {
-    filename: "WjUtils.js",
+    filename: "wj_utils.js",
     path: path.resolve(__dirname, "../dist"),
     library: "wjUtils",
     libraryTarget: "umd"

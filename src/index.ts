@@ -3,7 +3,7 @@
  * @Author: qk
  * @Date: 2020-03-10 14:00:46
  * @LastEditors: wanjunSun
- * @LastEditTime: 2020-04-20 11:44:03
+ * @LastEditTime: 2020-04-20 14:27:20
  */
 
 let telphoneReg = /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/ //座机正则例如0551-5555555
@@ -238,46 +238,4 @@ export const desensitization = (
     }
   }
   return str
-}
-/**
- * @author: wanjunSun
- * @description: 防抖
- * @param {fun} 函数
- * @param {dalay} 时间
- * @return:
- * @Date: 2020-04-20 11:40:52
- */
-export const debounce = (fun: Function, dalay: number) => {
-  let timer: any = null
-  return (dalay: any, ...args: any[]) => {
-    if (timer) clearTimeout(timer)
-    timer = setTimeout(() => {
-      fun.apply(this, args)
-      timer = null
-    }, dalay)
-  }
-}
-/**
- * @author: wanjunSun
- * @description: 节流
- * @param {fun} 函数
- * @param {dalay} 时间
- * @return:
- * @Date: 2020-04-20 11:40:52
- */
-export const throttle = (fun: Function, dalay: number) => {
-  let timer: any = null
-  let prev = Date.now() - dalay
-  return (...args: any[]) => {
-    let remaining = dalay - (Date.now() - prev)
-    clearTimeout(timer)
-    if (remaining <= 0) {
-      fun.apply(this, args)
-      prev = Date.now()
-    } else {
-      timer = setTimeout(() => {
-        fun.apply(this, args)
-      }, remaining)
-    }
-  }
 }

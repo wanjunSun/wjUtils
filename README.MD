@@ -1,7 +1,7 @@
 # wjUtils
 
 #### 如何使用
-引用 dist 文件下 wjUtils文件  
+引用 dist 文件下 index.js文件  
 
 > wjUtils.xxxx()
 
@@ -29,8 +29,7 @@
 | isContain | 是否包含 | （any,array） | isContain(a,["a","b"]) |  | boolean |
 | highlyResponsive | 给h5使用主要解决键盘上移影响到样式 | (any,any,boolean) | 下面所示（1.1） |  |  |
 | desensitization | 脱敏验证 | (type:any,content:string\|number) | 下面所示（1.2） | type:idCard\|phone\|name | string |
-| debounce | 函数防抖 | (函数,规定时间) |  |  |  |
-| throttle | 节流函数 | (函数,规定时间) |  |  |  |
+
 
 #### 1.1--highlyResponsive 使用方式
 
