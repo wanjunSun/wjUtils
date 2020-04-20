@@ -3,7 +3,7 @@
  * @Author: qk
  * @Date: 2020-03-10 14:00:46
  * @LastEditors: wanjunSun
- * @LastEditTime: 2020-04-18 16:28:19
+ * @LastEditTime: 2020-04-20 10:51:54
  */
 
 let telphoneZZ = /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/ //座机正则例如0551-5555555
