@@ -1,6 +1,6 @@
 {
   "name": "wj_utils",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "wj_utils 个人用的一些基本库",
   "main": "./dist/wj_utils.js",
   "types": "./dist/index.d.ts",
