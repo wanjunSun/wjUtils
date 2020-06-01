@@ -56,3 +56,35 @@ export declare const highlyResponsive: (body: any, height?: any, scroll?: boolea
  * @Date: 2020-04-18 16:10:35
  */
 export declare const desensitization: (type: string | undefined, content: [string, number]) => string;
+/**
+ * @author: wanjunSun
+ * @description: 是否是移动端
+ * @param {type}
+ * @return:
+ * @Date: 2020-05-28 11:06:33
+ */
+export declare const isDeviceMobile: () => boolean;
+/**
+ * @author: wanjunSun
+ * @description: 是否是微信浏览器
+ * @param {type}
+ * @return:
+ * @Date: 2020-05-28 11:06:54
+ */
+export declare const isWeiXin: () => boolean;
+/**
+ * @author: wanjunSun
+ * @description: 是否是苹果手机
+ * @param {type}
+ * @return:
+ * @Date: 2020-05-28 11:07:23
+ */
+export declare const isIos: () => boolean;
+/**
+ * @author: wanjunSun
+ * @description: 数组去重
+ * @param {type}
+ * @return:
+ * @Date: 2020-05-28 11:09:35
+ */
+export declare const unique: (arr: any) => any;
