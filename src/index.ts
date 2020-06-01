@@ -3,7 +3,7 @@
  * @Author: qk
  * @Date: 2020-03-10 14:00:46
  * @LastEditors: wanjunSun
- * @LastEditTime: 2020-04-29 09:05:06
+ * @LastEditTime: 2020-05-28 11:10:06
  */
 
 let telphoneReg = /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/ //座机正则例如0551-5555555
@@ -238,4 +238,76 @@ export const desensitization = (
     }
   }
   return str
+}
+
+const ua: any = navigator.userAgent.toLowerCase()
+/**
+ * @author: wanjunSun
+ * @description: 是否是移动端
+ * @param {type}
+ * @return:
+ * @Date: 2020-05-28 11:06:33
+ */
+export const isDeviceMobile = () => {
+  return /android|webos|iphone|ipod|balckberry/i.test(ua)
+}
+
+/**
+ * @author: wanjunSun
+ * @description: 是否是微信浏览器
+ * @param {type}
+ * @return:
+ * @Date: 2020-05-28 11:06:54
+ */
+
+export const isWeiXin = () => {
+  return ua.match(/microMessenger/i) == "micromessenger"
+}
+/**
+ * @author: wanjunSun
+ * @description: 是否是苹果手机
+ * @param {type}
+ * @return:
+ * @Date: 2020-05-28 11:07:23
+ */
+export const isIos = () => {
+  var u = navigator.userAgent
+  if (u.indexOf("Android") > -1 || u.indexOf("Linux") > -1) {
+    //安卓手机
+    return false
+  } else if (u.indexOf("iPhone") > -1) {
+    //苹果手机
+    return true
+  } else if (u.indexOf("iPad") > -1) {
+    //iPad
+    return false
+  } else if (u.indexOf("Windows Phone") > -1) {
+    //winphone手机
+    return false
+  } else {
+    return false
+  }
+}
+
+/**
+ * @author: wanjunSun
+ * @description: 数组去重
+ * @param {type}
+ * @return:
+ * @Date: 2020-05-28 11:09:35
+ */
+export const unique = (arr: any) => {
+  if (Array.hasOwnProperty("from")) {
+    return Array.from(new Set(arr))
+  } else {
+    var n: any = {},
+      r: any = []
+    for (var i = 0; i < arr.length; i++) {
+      if (!n[arr[i]]) {
+        n[arr[i]] = true
+        r.push(arr[i])
+      }
+    }
+    return r
+  }
 }

@@ -44,6 +44,12 @@ export default {
 |     isContain     |               是否包含               |           （any,array）           | isContain(a,["a","b"])                    |                          | boolean                    |
 | highlyResponsive  | 给 h5 使用主要解决键盘上移影响到样式 |         (any,any,boolean)         | 下面所示（1.1）                           |                          |                            |
 |  desensitization  |               脱敏验证               | (type:any,content:string\|number) | 下面所示（1.2）                           | type:idCard\|phone\|name | string                     |
+|  isDeviceMobile   |             是否是移动端             |                                   |                                           |                          | boolean                    |
+|     isWeiXin      |           是否是微信浏览器           |                                   |                                           |                          | boolean                    |
+|       isIos       |            是否是苹果手机            |                                   |                                           |                          | boolean                    |
+|      unique       |                 去重                 |           对象或者数组            |                                           |                          | 数组                       |
+
+
 
 #### 1.1--highlyResponsive 使用方式
 
