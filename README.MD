@@ -1,5 +1,7 @@
 # wj_utils
 
+> [项目地址](https://github.com/wanjunSun/wjUtils)有什么需要的可以提issues
+
 #### js 导入
 
 引用 dist 文件下 wj_utils.js 文件
@@ -49,8 +51,6 @@ export default {
 |       isIos       |            是否是苹果手机            |                                   |                                           |                          | boolean                    |
 |      unique       |                 去重                 |           对象或者数组            |                                           |                          | 数组                       |
 |     isEmpyObj     |           对象或者数组为空           |           对象或者数组            |                                           |                          | boolean                    |
-
-
 
 #### 1.1--highlyResponsive 使用方式
 
