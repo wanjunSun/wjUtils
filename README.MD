@@ -48,6 +48,7 @@ export default {
 |     isWeiXin      |           是否是微信浏览器           |                                   |                                           |                          | boolean                    |
 |       isIos       |            是否是苹果手机            |                                   |                                           |                          | boolean                    |
 |      unique       |                 去重                 |           对象或者数组            |                                           |                          | 数组                       |
+|     isEmpyObj     |           对象或者数组为空           |           对象或者数组            |                                           |                          | boolean                    |
 
 
 

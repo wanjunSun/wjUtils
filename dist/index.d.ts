@@ -24,7 +24,7 @@ export declare const getSubStringSum: (str?: string, num?: number) => string;
  */
 export declare const uuid: (len: number, radix?: number) => string;
 /**
- * @author: wanjunSun
+ * @author: qk
  * @description: 去除空格
  * @param {type} 需要去除的值
  * @return:
@@ -32,7 +32,7 @@ export declare const uuid: (len: number, radix?: number) => string;
  */
 export declare const removeSpace: (value: string) => string;
 /**
- * @author: wanjunSun
+ * @author: qk
  * @description: 在数组中是否包含某个字段
  * @param {type} value:值 list:数组
  * @return:
@@ -40,7 +40,7 @@ export declare const removeSpace: (value: string) => string;
  */
 export declare const isContain: (value: any, list: []) => boolean;
 /**
- * @author: wanjunSun
+ * @author: qk
  * @description: 解决H5响应式问题 主要关于键盘改变body高度问题
  * @param {type} body,height:改变高度,是否需要滚动
  * @return:
@@ -48,7 +48,7 @@ export declare const isContain: (value: any, list: []) => boolean;
  */
 export declare const highlyResponsive: (body: any, height?: any, scroll?: boolean) => void;
 /**
- * @author: wanjunSun
+ * @author: qk
  * @description: 脱敏处理
  * @param {type} 脱敏类型:身份证idCard 、姓名 name 、电话 phone
  * @param {content} 需要处理的内容
@@ -57,7 +57,7 @@ export declare const highlyResponsive: (body: any, height?: any, scroll?: boolea
  */
 export declare const desensitization: (type: string | undefined, content: [string, number]) => string;
 /**
- * @author: wanjunSun
+ * @author: qk
  * @description: 是否是移动端
  * @param {type}
  * @return:
@@ -65,7 +65,7 @@ export declare const desensitization: (type: string | undefined, content: [strin
  */
 export declare const isDeviceMobile: () => boolean;
 /**
- * @author: wanjunSun
+ * @author: qk
  * @description: 是否是微信浏览器
  * @param {type}
  * @return:
@@ -73,7 +73,7 @@ export declare const isDeviceMobile: () => boolean;
  */
 export declare const isWeiXin: () => boolean;
 /**
- * @author: wanjunSun
+ * @author: qk
  * @description: 是否是苹果手机
  * @param {type}
  * @return:
@@ -81,10 +81,18 @@ export declare const isWeiXin: () => boolean;
  */
 export declare const isIos: () => boolean;
 /**
- * @author: wanjunSun
+ * @author: qk
  * @description: 数组去重
  * @param {type}
  * @return:
  * @Date: 2020-05-28 11:09:35
  */
 export declare const unique: (arr: any) => any;
+/**
+ * @author: qk
+ * @description: 对象或者数组是否为空
+ * @param {all:对象或者数组}
+ * @return:boolean
+ * @Date: 2020-06-05 15:54:55
+ */
+export declare const isEmpyObj: (all: any) => true | undefined;
