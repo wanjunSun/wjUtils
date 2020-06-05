@@ -3,7 +3,7 @@
  * @Author: qk
  * @Date: 2020-03-10 14:00:46
  * @LastEditors: wanjunSun
- * @LastEditTime: 2020-05-28 11:10:06
+ * @LastEditTime: 2020-06-05 15:56:22
  */
 
 let telphoneReg = /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/ //座机正则例如0551-5555555
@@ -166,7 +166,7 @@ export const uuid = (len: number, radix: number = 10) => {
   return uuid.join("")
 }
 /**
- * @author: wanjunSun
+ * @author: qk
  * @description: 去除空格
  * @param {type} 需要去除的值
  * @return:
@@ -177,7 +177,7 @@ export const removeSpace = (value: string): string => {
 }
 
 /**
- * @author: wanjunSun
+ * @author: qk
  * @description: 在数组中是否包含某个字段
  * @param {type} value:值 list:数组
  * @return:
@@ -191,7 +191,7 @@ export const isContain = (value: any, list: []) => {
 }
 
 /**
- * @author: wanjunSun
+ * @author: qk
  * @description: 解决H5响应式问题 主要关于键盘改变body高度问题
  * @param {type} body,height:改变高度,是否需要滚动
  * @return:
@@ -206,7 +206,7 @@ export const highlyResponsive = (
   if (scroll) window.scrollBy(0, 0)
 }
 /**
- * @author: wanjunSun
+ * @author: qk
  * @description: 脱敏处理
  * @param {type} 脱敏类型:身份证idCard 、姓名 name 、电话 phone
  * @param {content} 需要处理的内容
@@ -242,7 +242,7 @@ export const desensitization = (
 
 const ua: any = navigator.userAgent.toLowerCase()
 /**
- * @author: wanjunSun
+ * @author: qk
  * @description: 是否是移动端
  * @param {type}
  * @return:
@@ -253,7 +253,7 @@ export const isDeviceMobile = () => {
 }
 
 /**
- * @author: wanjunSun
+ * @author: qk
  * @description: 是否是微信浏览器
  * @param {type}
  * @return:
@@ -264,7 +264,7 @@ export const isWeiXin = () => {
   return ua.match(/microMessenger/i) == "micromessenger"
 }
 /**
- * @author: wanjunSun
+ * @author: qk
  * @description: 是否是苹果手机
  * @param {type}
  * @return:
@@ -290,7 +290,7 @@ export const isIos = () => {
 }
 
 /**
- * @author: wanjunSun
+ * @author: qk
  * @description: 数组去重
  * @param {type}
  * @return:
@@ -309,5 +309,22 @@ export const unique = (arr: any) => {
       }
     }
     return r
+  }
+}
+/**
+ * @author: qk
+ * @description: 对象或者数组是否为空
+ * @param {all:对象或者数组}
+ * @return:boolean
+ * @Date: 2020-06-05 15:54:55
+ */
+export const isEmpyObj = (all: any) => {
+  let dv: string = Object.prototype.toString.call(all)
+  if (dv === "[object Array]") {
+    if (all.length === 0) return true
+  } else if (dv == "[object Object]") {
+    if (Object.keys(all).length === 0) return true
+  } else {
+    throw new Error("请传入数组或者对象")
   }
 }
