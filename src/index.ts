@@ -3,7 +3,7 @@
  * @Author: qk
  * @Date: 2020-03-10 14:00:46
  * @LastEditors: wanjunSun
- * @LastEditTime: 2020-06-05 15:56:22
+ * @LastEditTime: 2020-06-15 10:26:38
  */
 
 let telphoneReg = /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/ //座机正则例如0551-5555555
@@ -55,8 +55,8 @@ export const isIdCard = (paramenter: string | number): boolean => {
 }
 //验证开始时间和结束时间比较
 export const timeComparison = (d1: any, d2: any): boolean => {
-  var oDate1 = new Date(d1)
-  var oDate2 = new Date(d2)
+  let oDate1 = new Date(d1)
+  let oDate2 = new Date(d2)
   if (oDate1.getTime() > oDate2.getTime()) return true
   else return false
 }
@@ -271,7 +271,7 @@ export const isWeiXin = () => {
  * @Date: 2020-05-28 11:07:23
  */
 export const isIos = () => {
-  var u = navigator.userAgent
+  let u = navigator.userAgent
   if (u.indexOf("Android") > -1 || u.indexOf("Linux") > -1) {
     //安卓手机
     return false
@@ -300,9 +300,9 @@ export const unique = (arr: any) => {
   if (Array.hasOwnProperty("from")) {
     return Array.from(new Set(arr))
   } else {
-    var n: any = {},
+    let n: any = {},
       r: any = []
-    for (var i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
       if (!n[arr[i]]) {
         n[arr[i]] = true
         r.push(arr[i])
@@ -326,5 +326,46 @@ export const isEmpyObj = (all: any) => {
     if (Object.keys(all).length === 0) return true
   } else {
     throw new Error("请传入数组或者对象")
+  }
+}
+/**
+ * @author: wanjunSun
+ * @description: 冒泡排序
+ * @param {type}
+ * @return: 数组
+ * @Date: 2020-06-15 10:20:39
+ */
+export const bubbleSort = (arr: []) => {
+  let len = arr.length
+  if (!len) return new Error("数组为空")
+  else {
+    let low = 0
+    let high = arr.length - 1 //设置变量的初始值
+    let tmp, j
+    while (low < high) {
+      for (
+        j = low;
+        j < high;
+        ++j //正向冒泡,找到最大者
+      )
+        if (arr[j] > arr[j + 1]) {
+          tmp = arr[j]
+          arr[j] = arr[j + 1]
+          arr[j + 1] = tmp
+        }
+      --high //修改high值, 前移一位
+      for (
+        j = high;
+        j > low;
+        --j //反向冒泡,找到最小者
+      )
+        if (arr[j] < arr[j - 1]) {
+          tmp = arr[j]
+          arr[j] = arr[j - 1]
+          arr[j - 1] = tmp
+        }
+      ++low //修改low值,后移一位
+      return arr
+    }
   }
 }

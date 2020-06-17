@@ -96,3 +96,11 @@ export declare const unique: (arr: any) => any;
  * @Date: 2020-06-05 15:54:55
  */
 export declare const isEmpyObj: (all: any) => true | undefined;
+/**
+ * @author: wanjunSun
+ * @description: 冒泡排序
+ * @param {type}
+ * @return: 数组
+ * @Date: 2020-06-15 10:20:39
+ */
+export declare const bubbleSort: (arr: []) => [] | Error | undefined;
