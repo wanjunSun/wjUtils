@@ -51,6 +51,8 @@ export default {
 |       isIos       |            是否是苹果手机            |                                   |                                           |                          | boolean                    |
 |      unique       |                 去重                 |           对象或者数组            |                                           |                          | 数组                       |
 |     isEmpyObj     |           对象或者数组为空           |           对象或者数组            |                                           |                          | boolean                    |
+|    bubbleSort     |               冒泡排序               |               数组                |                                           |                          | 数组                       |
+|    systemTime     |             系统当前时间             |                                   |                                           |                          | xxxx年xx月xx日 x时x分x秒   |
 
 #### 1.1--highlyResponsive 使用方式
 
@@ -82,3 +84,14 @@ wjUtils.desensitization("idCard", "340521199912121321") //3405*****1321
 wjUtils.desensitization("phone", "13965621111") //139****111
 wjUtils.desensitization("name", "张三") //*三
 ```
+
+
+
+#### 1.3--systemTime 使用
+
+```
+let timeUpDate = timeupdate();
+let test = document.getElementById('test')
+setTimeout(()=>{test.innerHTML = timeUpdate()}, 1000)
+```
+

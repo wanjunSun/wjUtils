@@ -3,7 +3,7 @@
  * @Author: qk
  * @Date: 2020-03-10 14:00:46
  * @LastEditors: wanjunSun
- * @LastEditTime: 2020-06-15 10:26:38
+ * @LastEditTime: 2020-07-10 08:32:43
  */
 
 let telphoneReg = /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/ //座机正则例如0551-5555555
@@ -368,4 +368,25 @@ export const bubbleSort = (arr: []) => {
       return arr
     }
   }
+}
+/**
+ * @author: wanjunSun
+ * @description: 获取系统当前时间
+ * @param {type}
+ * @return:返回x年x月x日 x时x分x秒
+ * @Date: 2020-07-08 08:26:33
+ */
+export const systemTime = () => {
+  let date = new Date()
+  let year = date.getFullYear()
+  let month = date.getMonth() + 1
+  let day = date.getDate()
+  let hour = "00" + date.getHours()
+  hour = hour.substr(hour.length - 2)
+  let minute = "00" + date.getMinutes()
+  minute = minute.substr(minute.length - 2)
+  let second = "00" + date.getSeconds()
+  second = second.substr(second.length - 2)
+
+  return `${year}年${month}月${day}日   ${hour}:${minute}:${second}`
 }

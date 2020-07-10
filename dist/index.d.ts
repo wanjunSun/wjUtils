@@ -104,3 +104,11 @@ export declare const isEmpyObj: (all: any) => true | undefined;
  * @Date: 2020-06-15 10:20:39
  */
 export declare const bubbleSort: (arr: []) => [] | Error | undefined;
+/**
+ * @author: wanjunSun
+ * @description: 获取系统当前时间
+ * @param {type}
+ * @return:返回x年x月x日 x时x分x秒
+ * @Date: 2020-07-08 08:26:33
+ */
+export declare const systemTime: () => string;
