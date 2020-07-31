@@ -3,7 +3,7 @@
  * @Author: qk
  * @Date: 2020-03-10 14:00:46
  * @LastEditors: wanjunSun
- * @LastEditTime: 2020-07-10 08:32:43
+ * @LastEditTime: 2020-07-31 15:03:27
  */
 
 let telphoneReg = /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/ //座机正则例如0551-5555555
@@ -389,4 +389,33 @@ export const systemTime = () => {
   second = second.substr(second.length - 2)
 
   return `${year}年${month}月${day}日   ${hour}:${minute}:${second}`
+}
+/**
+ * @author: wanjunSun
+ * @description: 计算时间差值
+ * @param {type} 
+ * @return: 返回差值
+ * @Date: 2020-07-31 15:01:43
+ */
+export const diffTime = (sDate: any, eDate: any) => {
+  let diff = eDate.getTime() - sDate
+  let days = Math.floor(diff / (24 * 3600 * 1000))
+  let leave1 = diff % (24 * 3600 * 1000)
+  let hours = Math.floor(leave1 / (3600 * 1000))
+  let leave2 = leave1 % (3600 * 1000)
+  let minutes = Math.floor(leave2 / (60 * 1000))
+  let leave3 = leave2 % (60 * 1000)
+  let seconds = Math.round(leave3 / 1000)
+
+  let returnStr = seconds + "秒以前"
+  if (minutes > 0) {
+    returnStr = minutes + "分钟前"
+  }
+  if (hours > 0) {
+    returnStr = hours + "小时前"
+  }
+  if (days > 0) {
+    returnStr = days + "天前"
+  }
+  return returnStr
 }
