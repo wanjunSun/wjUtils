@@ -3,7 +3,7 @@
  * @Author: qk
  * @Date: 2020-03-10 14:00:46
  * @LastEditors: wanjunSun
- * @LastEditTime: 2020-07-31 15:03:27
+ * @LastEditTime: 2020-08-21 15:14:55
  */
 
 let telphoneReg = /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/ //座机正则例如0551-5555555
@@ -393,7 +393,7 @@ export const systemTime = () => {
 /**
  * @author: wanjunSun
  * @description: 计算时间差值
- * @param {type} 
+ * @param {type}
  * @return: 返回差值
  * @Date: 2020-07-31 15:01:43
  */
@@ -418,4 +418,17 @@ export const diffTime = (sDate: any, eDate: any) => {
     returnStr = days + "天前"
   }
   return returnStr
+}
+/**
+ * @author: wanjunSun
+ * @description: 数值格式化
+ * @param {number 数字}
+ * @return {格式化之后的数字 1,000.00}
+ * @Date: 2020-08-21 15:14:16
+ */
+export const thousands = (number: number): String => {
+  let str = number.toString()
+  let reg =
+    str.indexOf(".") > -1 ? /(\d)(?=(\d{3})+\.)/g : /(\d)(?=(?:\d{3})+$)/g
+  return str.replace(reg, "$1,")
 }
