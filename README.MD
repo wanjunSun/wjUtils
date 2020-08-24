@@ -53,6 +53,9 @@ export default {
 |     isEmpyObj     |           对象或者数组为空           |           对象或者数组            |                                           |                          | boolean                    |
 |    bubbleSort     |               冒泡排序               |               数组                |                                           |                          | 数组                       |
 |    systemTime     |             系统当前时间             |                                   |                                           |                          | xxxx年xx月xx日 x时x分x秒   |
+|     thousands     |              数值格式化              |              number               | thousands(v)                              |                          | 100,999                    |
+
+
 
 #### 1.1--highlyResponsive 使用方式
 
