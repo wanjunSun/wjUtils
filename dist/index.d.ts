@@ -112,3 +112,19 @@ export declare const bubbleSort: (arr: []) => [] | Error | undefined;
  * @Date: 2020-07-08 08:26:33
  */
 export declare const systemTime: () => string;
+/**
+ * @author: wanjunSun
+ * @description: 计算时间差值
+ * @param {type}
+ * @return: 返回差值
+ * @Date: 2020-07-31 15:01:43
+ */
+export declare const diffTime: (sDate: any, eDate: any) => string;
+/**
+ * @author: wanjunSun
+ * @description: 数值格式化
+ * @param {number 数字}
+ * @return {格式化之后的数字 1,000.00}
+ * @Date: 2020-08-21 15:14:16
+ */
+export declare const thousands: (number: number) => String;
