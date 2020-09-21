@@ -128,3 +128,4 @@ export declare const diffTime: (sDate: any, eDate: any) => string;
  * @Date: 2020-08-21 15:14:16
  */
 export declare const thousands: (number: number) => String;
+export declare const printEL: (id: string, style?: string) => void;
