@@ -54,6 +54,7 @@ export default {
 |    bubbleSort     |               冒泡排序               |               数组                |                                           |                          | 数组                       |
 |    systemTime     |             系统当前时间             |                                   |                                           |                          | xxxx年xx月xx日 x时x分x秒   |
 |     thousands     |              数值格式化              |              number               | thousands(v)                              |                          | 100,999                    |
+|      printEL      |                 打印                 |           string,string           | printEL(id,style)                         |                          |                            |
 
 
 

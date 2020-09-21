@@ -3,7 +3,7 @@
  * @Author: qk
  * @Date: 2020-03-10 14:00:46
  * @LastEditors: wanjunSun
- * @LastEditTime: 2020-08-21 15:14:55
+ * @LastEditTime: 2020-09-21 08:53:39
  */
 
 let telphoneReg = /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/ //座机正则例如0551-5555555
@@ -431,4 +431,22 @@ export const thousands = (number: number): String => {
   let reg =
     str.indexOf(".") > -1 ? /(\d)(?=(\d{3})+\.)/g : /(\d)(?=(?:\d{3})+$)/g
   return str.replace(reg, "$1,")
+}
+
+export const printEL = (id: string, style: string = ""): void => {
+  if (id) {
+    const root = document.getElementById(id)
+    let el = root && root?.outerHTML
+    if (el) {
+      el = el?.concat(`<style>${style}</style>`)
+      const w = window.open("")
+      w?.document.write(el)
+      w?.location.reload()
+      w?.focus()
+      w?.print()
+      w?.close()
+    }
+  } else {
+    console.error("id为必填项")
+  }
 }
